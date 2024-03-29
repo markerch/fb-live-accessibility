@@ -1,0 +1,63 @@
+<nx-context-menu #menu2="nxContextMenu">
+    <nx-context-menu-header> Language </nx-context-menu-header>
+    <button
+        nxContextMenuItem
+        type="button"
+        *ngFor="let o of options"
+        (click)="selectedLanguage = o.value"
+    >
+        <nx-icon
+            aria-hidden="true"
+            *ngIf="selectedLanguage === o.value"
+            name="check"
+            nxIconPositionStart
+        ></nx-icon>
+        {{o.label}}
+    </button>
+</nx-context-menu>
+
+<header nx-header>
+  <nx-header-row>
+    <nx-header-brand>
+      <nx-link> <a href="#">
+          <figure nxFigure> <img src="assets/logos/favicon.svg" alt="Brand Logo" role="none" /> </figure>
+        </a> </nx-link>
+    </nx-header-brand>
+    <nx-header-actions>
+        <button
+        nxButton="tertiary small"
+        aria-label="Select Language"
+        type="button"
+    >   <nx-icon aria-hidden="true" name="phone-o" nxIconPositionStart></nx-icon>
+        ติดต่อตัวแทน
+    </button> 
+        <button
+    nxButton="tertiary small"
+    [nxContextMenuTriggerFor]="menu2"
+    aria-label="Select Language"
+    type="button"
+    style="color: #414141;"
+>   <nx-icon aria-hidden="true" name="globe" nxIconPositionStart></nx-icon>
+    {{ selectedLanguage | uppercase }}
+    <nx-icon aria-hidden="true" name="chevron-down" nxIconPositionEnd></nx-icon>
+</button> </nx-header-actions>
+  </nx-header-row>
+  <nx-header-row>
+    <nx-header-navigation>
+      <nx-header-navigation-item> <a routerLink="./" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active" nxHeaderLink><b>ส่วนตัว</b></a> </nx-header-navigation-item>
+      <nx-header-navigation-item> <a routerLink="./" [queryParams]="{s: 2}" routerLinkActive="is-active" [skipLocationChange]="true" nxHeaderLink><b>ธุรกิจ</b></a> </nx-header-navigation-item>
+      <nx-header-navigation-item> <a routerLink="./" [queryParams]="{s: 3}" routerLinkActive="is-active" [skipLocationChange]="true" nxHeaderLink><b>เครม</b></a> </nx-header-navigation-item>
+      <nx-header-navigation-item> <a routerLink="./" [queryParams]="{s: 4}" routerLinkActive="is-active" [skipLocationChange]="true" nxHeaderLink><b>เกี่ยวกับเรา</b></a> </nx-header-navigation-item>
+      <nx-header-navigation-item> <a routerLink="./" [queryParams]="{s: 5}" routerLinkActive="is-active" [skipLocationChange]="true" nxHeaderLink><b>ข่าวสาร</b></a> </nx-header-navigation-item>
+    </nx-header-navigation>
+    <nx-header-actions>
+        <button
+        nxButton="tertiary small"
+        aria-label="Select Language"
+        type="button"
+    >   <nx-icon aria-hidden="true" name="search" nxIconPositionStart></nx-icon>
+        ค้นหา
+    </button> 
+    </nx-header-actions>
+  </nx-header-row>
+</header>

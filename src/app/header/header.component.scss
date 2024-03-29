@@ -1,0 +1,20 @@
+nx-header-brand img {
+    margin-right: 8px;
+}
+
+figure {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    color: var(--text-01, #ffffff);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.language-menu {
+    color: #414141;
+}
