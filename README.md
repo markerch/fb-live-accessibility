@@ -1,4 +1,4 @@
-Static Page for Allianz Technology Virtual Tech Talk. (Yes, I'm one of the speakers)
+Static Page for Allianz Technology Virtual Tech Talk. (Yes, I was one of the speakers)
 
 Link to FB Live
 
